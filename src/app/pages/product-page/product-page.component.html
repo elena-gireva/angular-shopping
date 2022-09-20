@@ -1,0 +1,18 @@
+<h2 class="font-bold mb-2 text-center text-2xl underline">{{ title | titlecase}}</h2>
+
+
+  <div >
+    <input [(ngModel)]="searchStr"
+      type="text"
+      class="mb-2 border py-2 px-4 w-full"
+      placeholder="Looking for...">
+  </div>
+
+
+<app-product
+
+  *ngFor = 'let product of products | search:searchStr; let i = index'
+  [product] = "product"
+
+></app-product>
+
